@@ -30,14 +30,13 @@ order = []
 # Display the menu and take user's order
 while True:
     show_menu()
-    option = input("Select an option from the menu (1-6): ")
+    option = input("Select an option from the menu (1-6), or type 'done' to finish: ")
     
-    if option in menu:
-        if option == "6":
-            break
-        else:
-            order.append(option)
-            print(menu[option]["name"] + " added to the order.")
+    if option.lower() == "done":
+        break
+    elif option in menu:
+        order.append(option)
+        print(menu[option]["name"] + " added to the order.")
     else:
         print("Invalid option. Please select an option from the menu.")
 
